@@ -1,17 +1,19 @@
 import React, { createContext } from 'react'
+
 export const userDataContext = createContext()
-function userContext({children}) {
+
+function UserContext({ children }) {
   const serverUrl = "http://localhost:8080"
-  const value={
+
+  const value = {
     serverUrl
   }
+
   return (
-    <div>
-      <userDataContext.Provider value={value}>
+    <userDataContext.Provider value={value}>
       {children}
-      </userDataContext.Provider>
-    </div>
+    </userDataContext.Provider>
   )
 }
 
-export default userContext
+export default UserContext
